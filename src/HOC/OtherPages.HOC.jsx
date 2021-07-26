@@ -3,23 +3,23 @@ import React, {Component} from "react";
 import { Route } from "react-router-dom";
 
 // Layout
-import DefaultLayout from "../layouts/Default.layout";
+import OtherPagesLayout from "../layouts/OtherPages.layout";
 
 
 
-const DefaultHOC = ({ Component, ...rest }) => {
+const OtherPagesHOC = ({ Component, ...rest }) => {
   return (
     <>
       <Route
         {...rest}
         component={(props) => (
-          <DefaultLayout>
+          <OtherPagesLayout>
             <component {...props} />
-          </DefaultLayout>
+          </OtherPagesLayout>
         )}
       />
     </>
   );
 };
 
-export default DefaultHOC;
+export default OtherPagesHOC;

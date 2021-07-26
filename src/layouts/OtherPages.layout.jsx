@@ -1,21 +1,20 @@
 import React from "react";
 
 // Components
+import Plays from "../pages/Plays.page";
 import Navbar from "../components/Navbar/navbar.component";
 import HeroCarousal from "../components/HeroCarousal/HeroCarousal.component";
-import HomePage from "../pages/Home.page";
-//import Plays from "../pages/Plays.page";
 
 
-const DefaultLayout = (props) => {
+const OtherPagesLayout = (props) => {
   return (
     <>
       <Navbar />
       <HeroCarousal />
-      <HomePage />
+      <Plays />
       {props.children}
     </>
   );
 };
 
-export default DefaultLayout;
+export default OtherPagesLayout;

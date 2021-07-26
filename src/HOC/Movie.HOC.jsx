@@ -3,23 +3,23 @@ import React, {Component} from "react";
 import { Route } from "react-router-dom";
 
 // Layout
-import DefaultLayout from "../layouts/Default.layout";
+import MovieLayout from "../layouts/Movie.layout";
 
 
 
-const DefaultHOC = ({ Component, ...rest }) => {
+const MovieHOC = ({ Component, ...rest }) => {
   return (
     <>
       <Route
         {...rest}
         component={(props) => (
-          <DefaultLayout>
+          <MovieLayout>
             <component {...props} />
-          </DefaultLayout>
+          </MovieLayout>
         )}
       />
     </>
   );
 };
 
-export default DefaultHOC;
+export default MovieHOC;

@@ -1,43 +1,38 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import {
   BiChevronRight,
   BiSearch,
   BiMenu,
   BiChevronDown,
+  BiShareAlt,
 } from "react-icons/bi";
+
+//Context
+import { MovieContext } from "../../context/movie.context";
 
 
 const NavSm = () => {
+  const { movie } = useContext(MovieContext);
+
+
   return (
     <>
       <div className="text-white flex items-center justify-between">
         <div>
-          <h3 className="text-xl font-bold">It All starts Here!</h3>
+          <h3 className="text-xl font-bold">{movie.original_title}</h3>
           <span className="text-gray-400 text-xs flex items-center">
             Delhi <BiChevronRight />
           </span>
         </div>
         <div className="w-8 h-8">
-          <BiSearch className="w-full h-full" />
+          <BiShareAlt className="w-full h-full" />
         </div>
       </div>
     </>
   );
 };
 
-const NavMd = () => {
-  return (
-    <div className="w-full flex items-center gap-3 bg-white px-3 py-2 rounded-md">
-      <BiSearch />
-      <input
-        type="search"
-        className="w-full bg-transparent border-none focus:outline-none"
-        placeholder="Search for movies, events, Plays, Sports and Activities."
-      />
-    </div>
-  );
-};
 
 const NavLg = () => {
   return (
@@ -62,7 +57,7 @@ const NavLg = () => {
         </div>
         <div className="flex items-center gap-3">
           <span className="text-gray-200 text-xs flex items-center cursor-pointer hover:text-white">
-            NCR <BiChevronDown />
+            Delhi <BiChevronDown />
           </span>
           <button className="bg-red-600 text-white px-2 py-1 text-sm rounded">
             Sign in
@@ -78,18 +73,18 @@ const NavLg = () => {
 
 
  
-const Navbar = () => {
+const MovieNavbar = () => {
   return (
     <>
-      <nav className="bg-bms-700 p-4">
+      <nav className="absolute inset-x-0 z-30 bg-opacity-10 backdrop-filter backdrop-blur-lg lg:relative lg:bg-bms-700 p-4">
         <div className="md:hidden">
           {/* small screen */}
           <NavSm />
         </div>
 
-        <div className="hidden md:flex lg:hidden">
+        <div className="hidden md:block lg:hidden ">
           {/* medium screen */}
-          <NavMd />
+          <NavSm />
         </div>
 
         <div className="hidden w-full lg:flex">
@@ -101,29 +96,9 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default MovieNavbar;
 
 
 
 
 
-
-
-
-
-/*
-import React from "react";
-const NavSm = () => {};
-const NavMd = () => {};
-const NavLg = () => {};
-const Navbar = () => {
-    return (
-      <>
-        <nav>
-            <div className="md: hidden"></div>
-        </nav>
-      </>
-    );
-};
-export default Navbar;
-*/
