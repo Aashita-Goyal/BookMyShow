@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Book My Show Clone - Aashita Goyal
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
